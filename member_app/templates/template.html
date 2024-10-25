@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>template</title>
+	</head>
+
+	<body>
+		{% comment %} 템플릿 안에서의 변수는 아래 변수 선언 코드블록 안에서만
+		활용가능 {% endcomment %} {% with firstname='Tobias' %}
+		<h1>Hello {{firstname}}, how are you?</h1>
+		{% endwith %}
+		<h1>Hello {{firstname}}, how are you?</h1>
+	</body>
+</html>
