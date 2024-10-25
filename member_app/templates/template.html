@@ -3,14 +3,44 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>template</title>
+		<title>test template</title>
 	</head>
-
 	<body>
 		{% comment %} 템플릿 안에서의 변수는 아래 변수 선언 코드블록 안에서만
-		활용가능 {% endcomment %} {% with firstname='Tobias' %}
+		활용가능{% endcomment %} {% comment %} 테스트용 뷰1 {% with
+		firstname="Tobias"%}
 		<h1>Hello {{firstname}}, how are you?</h1>
 		{% endwith %}
-		<h1>Hello {{firstname}}, how are you?</h1>
+		<h2>Hello {{firstname}}, how are you?</h2>
+		{% endcomment %} {% comment %} 테스트용 뷰2
+		<ul>
+			{% for x in myMembers %}
+			<li>{{x.username}}</li>
+			{% endfor %}
+		</ul>
+		{% endcomment %} {% comment %} 테스트용 뷰3
+		<ul>
+			{% if greeting == 1 %}
+			<h1>Hello</h1>
+			{% else %}
+			<h1>Bye</h1>
+			{% endif %}
+		</ul>
+		{% endcomment %} {% comment %} 테스트용 뷰4 {% if greeting == 1 %}
+		<h1>Hello</h1>
+		{% elif greeting == 2 %}
+		<h1>Welcome</h1>
+		{% else %}
+		<h1>GoodBye</h1>
+		{% endif %}{% endcomment %} {% comment %} 테스트용 뷰5 비교 연산자로 == , !=
+		, > , < , <= , >= 등 사용함 {% if greeting <= 2 %}
+		<h1>Hello</h1>
+		{% endif %}{% endcomment %} {% comment %} 테스트용 뷰6 and , or 비교 연산
+		밑에 방식을 자스로 풀어 쓰면 if greeting == 1 and day == "Friday" or
+		greeting == 5 django에서는 괄호가 허용되지 않기 때문에 연산자 입력 순서에
+		대한 우선 연산처리 부여 {% endcomment %} {% if greeting == 1 and day ==
+		"Friday" or greeting == 5 %}
+		<h1>Hello</h1>
+		{% endif %}
 	</body>
 </html>
